@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Статус API</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Tahoma', sans-serif;
+        background: #111111;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+      }
+      .container {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 15px 30px;
+        border-radius: 15px;
+        box-shadow: 0 6px 6px #42b883;
+      }
+      h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+      .status {
+        font-size: 1em;
+      }
+    </style>
+    <script>
+      const value = '{{value}}';
+      document.addEventListener('DOMContentLoaded', () => {
+        const color = value === 'ok' ? 'green' : 'red';
+        const status = document.getElementById('message');
+        status.style.color = color;
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Статус:</h2>
+      <p>
+        1. База данных:
+        <span id="message" class="status">{{ value }}</span>
+      </p>
+    </div>
+  </body>
+</html>
