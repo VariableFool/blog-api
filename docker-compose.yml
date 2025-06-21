@@ -13,6 +13,5 @@ services:
     restart: unless-stopped
 
 networks:
-  default:
-    external:
-      name: bridge
+  blog-net:
+    driver: bridge
