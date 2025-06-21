@@ -11,3 +11,8 @@ services:
     volumes:
       - ./uploads:/app/uploads
     restart: unless-stopped
+
+networks:
+  default:
+    external:
+      name: bridge
