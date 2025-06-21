@@ -149,6 +149,11 @@ def serve_uploaded_banner(filename):
     return send_from_directory(application.config["BANNER_UPLOAD_FOLDER"], filename)
 
 
+@application.route("/")
+def index():
+    return "<h1>Api работает</h1>"
+
+
 @application.route("/debug", methods=["POST"])
 @token_required
 def apiDebug():
